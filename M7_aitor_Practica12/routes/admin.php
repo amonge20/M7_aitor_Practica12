@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ControladorAdmin;
 
 Route::group(['middleware'=>['adb']],function(){
-    Route::get('articulos', [ControladorAdmin::class, 'articulos']);
-    Route::get('clientes', [ControladorAdmin::class, 'clientes']);
-    Route::get('facturacion', [ControladorAdmin::class, 'facturacion']);
-    Route::get('contabilidad', [ControladorAdmin::class, 'contabilidad']);
+    Route::get('/',[ControladorAdmin::class,'inici']) -> name('inici');
+    Route::get('/client',[ControladorAdmin::class,'clientes'])-> name('cliente');
+    Route::get('/comptabilitat',[ControladorAdmin::class,'contabilidad'])-> name('contabilidad');
+    Route::get('/facturacio',[ControladorAdmin::class,'facturacion'])-> name('facturacion');
 });
